@@ -3,6 +3,10 @@
     {
       "id": "Home",
       "isDefault": true
+    },
+    {
+      "id": "smileCenter",
+      "isDefault": false
     }
   ],
   "viewMode": false,

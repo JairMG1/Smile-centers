@@ -81,6 +81,18 @@
                 },
                 {
                   "key": "primaryColumns.EditActions1.isDiscardDisabled"
+                },
+                {
+                  "key": "primaryColumns.Center_Name.buttonColor"
+                },
+                {
+                  "key": "primaryColumns.Center_Name.borderRadius"
+                },
+                {
+                  "key": "primaryColumns.Center_Name.boxShadow"
+                },
+                {
+                  "key": "primaryColumns.Center_Name.buttonLabel"
                 }
               ],
               "leftColumn": 1,
@@ -125,13 +137,13 @@
               "widgetName": "smileCenterTable",
               "defaultPageSize": 0,
               "columnOrder": [
-                "objectId",
+                "Center_Name",
                 "Country",
                 "Active",
-                "Center_Name",
+                "EditActions1",
+                "objectId",
                 "createdAt",
-                "updatedAt",
-                "EditActions1"
+                "updatedAt"
               ],
               "dynamicPropertyPathList": [
                 {
@@ -146,7 +158,9 @@
               "columnWidthMap": {
                 "task": 245,
                 "step": 62,
-                "status": 75
+                "status": 75,
+                "Active": 174,
+                "Center_Name": 221
               },
               "parentRowSpace": 10,
               "hideCard": false,
@@ -154,6 +168,9 @@
               "dynamicTriggerPathList": [
                 {
                   "key": "primaryColumns.EditActions1.onSave"
+                },
+                {
+                  "key": "primaryColumns.Center_Name.onClick"
                 }
               ],
               "borderWidth": "1",
@@ -173,7 +190,7 @@
                   "fontStyle": "",
                   "enableFilter": true,
                   "enableSort": true,
-                  "isVisible": true,
+                  "isVisible": false,
                   "isDisabled": false,
                   "isCellEditable": false,
                   "isEditable": false,
@@ -195,7 +212,7 @@
                   "alias": "Center_Name",
                   "horizontalAlignment": "LEFT",
                   "verticalAlignment": "CENTER",
-                  "columnType": "text",
+                  "columnType": "button",
                   "textColor": "",
                   "textSize": "0.875rem",
                   "fontStyle": "",
@@ -207,12 +224,18 @@
                   "isEditable": false,
                   "isCellVisible": true,
                   "isDerived": false,
-                  "label": "Center_Name",
+                  "label": "Nombre del Centro",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
                   "computedValue": "{{smileCenterTable.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"Center_Name\"]))}}",
                   "validation": {},
-                  "cellBackground": ""
+                  "cellBackground": "",
+                  "buttonColor": "{{smileCenterTable.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.colors.primaryColor))}}",
+                  "borderRadius": "{{smileCenterTable.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+                  "boxShadow": "{{smileCenterTable.processedTableData.map((currentRow, currentIndex) => ( 'none'))}}",
+                  "customAlias": "",
+                  "buttonLabel": "{{smileCenterTable.processedTableData.map((currentRow, currentIndex) => ( currentRow.Center_Name))}}",
+                  "onClick": "{{navigateTo('smileCenter',{objectId: currentRow.objectId}, 'SAME_WINDOW')}}"
                 },
                 "createdAt": {
                   "allowCellWrapping": false,
@@ -291,7 +314,7 @@
                   "isEditable": false,
                   "isCellVisible": true,
                   "isDerived": false,
-                  "label": "Country",
+                  "label": "País",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
                   "computedValue": "{{smileCenterTable.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"Country\"]))}}",
@@ -319,7 +342,7 @@
                   "isEditable": true,
                   "isCellVisible": true,
                   "isDerived": false,
-                  "label": "Active",
+                  "label": "Mostrar en website",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
                   "computedValue": "{{smileCenterTable.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"Active\"]))}}",
